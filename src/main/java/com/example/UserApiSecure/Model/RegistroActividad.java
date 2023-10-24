@@ -1,11 +1,11 @@
-package com.example.UserApiSecure;
+package com.example.UserApiSecure.Model;
 
 import jakarta.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Registro_Actividades")
+@Table(name = "registro_actividades")
 public class RegistroActividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,8 @@ public class RegistroActividad {
 
     @Column(name = "fecha_actividad", updatable = false)
     private Date fechaActividad;
+
+    // Getters and setters, constructors, and other methods
 
     public RegistroActividad() {
     }

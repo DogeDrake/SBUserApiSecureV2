@@ -1,11 +1,11 @@
-package com.example.UserApiSecure;
+package com.example.UserApiSecure.Model;
 
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Roles")
+@Table(name = "roles")
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,8 @@ public class Rol {
 
     @ManyToMany(mappedBy = "roles")
     private List<Usuario> usuarios;
+
+    // Getters and setters, constructors, and other methods
 
     public Rol() {
     }

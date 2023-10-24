@@ -1,12 +1,13 @@
-package com.example.UserApiSecure;
+package com.example.UserApiSecure.Model;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Usuarios")
+@Table(name = "usuarios")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,8 +56,10 @@ public class Usuario {
     private List<RegistroActividad> actividades;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "Usuarios_Roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private List<Rol> roles;
+
+    // Getters and setters, constructors, and other methods
 
     public Usuario() {
     }
